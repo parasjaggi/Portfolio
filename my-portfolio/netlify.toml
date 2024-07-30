@@ -1,0 +1,10 @@
+[build]
+  command = "CI=  npm run build && netlify-lambda build && rm -rf my-portfolio/node_modules/es5-ext/"
+  publish= "out"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  
